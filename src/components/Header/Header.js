@@ -5,7 +5,7 @@ import './Header.css';
 class Header extends React.Component {
   render() {
     // standard JS can be used
-    const title = 'React Components';
+    const title = 'React Local State';
 
     return (
       <header>

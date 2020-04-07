@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
+import Counter from '../Counter/Counter';
 
 class App extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class App extends Component {
     this.state = {
       text: 'Hello Ursus',
       headingText: 'My Heading',
+      pageHeading: 'React Local State',
     };
 
   }
@@ -32,10 +34,16 @@ class App extends Component {
     this.alterHeading();
   }
 
+  clickGreeting = () => {
+    this.setState({
+      pageHeading: 'Hey There...'
+    });
+  }
+
   render() {
     return (
       <div>
-        <Header />
+        <Header title={this.state.pageHeading} somethingElse={this.clickGreeting} />
 
         <div>
           {/* <input
@@ -55,6 +63,8 @@ class App extends Component {
           <h2>{this.state.headingText}</h2>
 
           <button onClick={this.clickMe}>Click Me</button>
+
+          <Counter />
         </div>
       </div>
     );
